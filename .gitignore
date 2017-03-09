@@ -1,4 +1,5 @@
 *.aux
+*.out
 *.snm
 *.log
 *.nav
