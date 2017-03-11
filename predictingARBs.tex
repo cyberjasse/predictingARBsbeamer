@@ -1,9 +1,6 @@
 \documentclass{beamer}
 \usetheme[navigation]{UMONS}
 \usepackage[utf8]{inputenc}
-\usepackage{graphicx}
-\usepackage{caption}
-\usepackage{verbatim}
 
 \title[Predicting ARBs]{Predicting aging-related bugs using software complexity metrics}
 \author[B.Jason]{Jason \textsc{Bury}}
@@ -17,5 +14,60 @@
 
 \begin{document}
 \maketitle
- 
+\section{Introduction}
+\subsection{Aging-related bugs}
+
+\begin{frame}
+ \frametitle{Aging-Related Bugs}
+ \framesubtitle{Mandelbug}
+ If
+ \begin{itemize}
+  \item A time lag between the fault activation and the failure occurence.
+  \item Bug influenced by timing of operations or order of operations or environment interactions.
+ \end{itemize}
+ \vspace{1cm}
+ \begin{tabular}{lll}
+  Then & $\Longrightarrow$ & \emph{Mandelbug}\\
+  Else & $\Longrightarrow$ & \emph{Bohrbugs}
+ \end{tabular}
+\end{frame}
+% A bohrbugs can thus be easily isolated
+
+\begin{frame}
+ \frametitle{Aging-Related Bugs}
+ \framesubtitle{Aging-related mandelbug}
+ If Mandelbug and\\
+ \vspace{1cm}
+ Causes the accumulation of internal error states
+ \begin{center}
+  \large Or \normalsize
+ \end{center}
+ The running time increase the risk of the bug activation/propagation\\
+ \vspace{1cm}
+ Then $\Longrightarrow$ \emph{Aging-related Mandelbug}\\
+ \small Also called \emph{Aging-related bug} or ARB.\normalsize
+\end{frame}
+
+\begin{frame}
+ \frametitle{Aging-Related Bugs}
+ \framesubtitle{Examples}
+ \begin{exampleblock}{What can causes an ARB ?}
+  \begin{itemize}
+   \item Numerical error due to rouding or imprecision accrue over time
+   \item A malloc() without free()
+   \item A queue continuously increased
+   \item Size of ressource exceeded
+   \item ...
+  \end{itemize}
+ \end{exampleblock}
+\end{frame}
+
+\subsection{How to detect}
+\begin{frame}
+ \frametitle{How can we detect them ?}
+ %TODO use metrics then use a classifier
+ %TODO use blocks and alert for each step do discuss. Choose metrics, choose classifier, does it works, does it works for a new project
+\end{frame}
+
+
 \end{document}
