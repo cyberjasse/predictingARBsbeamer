@@ -4,4 +4,5 @@
 *.log
 *.nav
 *.toc
+*.tex.backup
 *~
