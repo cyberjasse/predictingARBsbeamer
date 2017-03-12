@@ -45,7 +45,7 @@
  The running time increase the risk of the bug activation/propagation\\
  \vspace{1cm}
  Then $\Longrightarrow$ \emph{Aging-related Mandelbug}\\
- \small Also called \emph{Aging-related bug} or ARB.\normalsize
+ \small Also called \emph{Aging-related bug} or \alert{ARB}.\normalsize
 \end{frame}
 
 \begin{frame}
@@ -53,7 +53,7 @@
  \framesubtitle{Examples}
  \begin{exampleblock}{What can causes an ARB ?}
   \begin{itemize}
-   \item Numerical error due to rouding or imprecision accrue over time
+   \item Numerical error due to rounding or imprecision accrue over time
    \item A malloc() without free()
    \item A queue continuously increased
    \item Size of ressource exceeded
@@ -65,9 +65,46 @@
 \subsection{How to detect}
 \begin{frame}
  \frametitle{How can we detect them ?}
- %TODO use metrics then use a classifier
- %TODO use blocks and alert for each step do discuss. Choose metrics, choose classifier, does it works, does it works for a new project
+ short answer: \alert{Select metrics then use a classifier !}\\
+ But still questions to do that:\\
+ \begin{block}{Questions}
+  \begin{itemize}
+   \item Which metrics to use ?
+   \item Which classifier to use ?
+   \item Does it works ?
+   \item will be the classifier effective for all projects ?
+  \end{itemize}
+ \end{block}
 \end{frame}
 
+\section{Metrics}
+\subsection{Metrics to use}
+\begin{frame}
+ \frametitle{Which metrics to use ?}
+ Metrics correlated with bug density:
+ \begin{itemize}
+  \item LOC : The number of lines of code
+  \item CC  : The McCabes's cyclomatic complexity
+  \item Halstead metrics %TODO est quoi ca ?
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Which metrics to use ?}
+ \framesubtitle{New metrics} %TODO un par slide avec exemples
+ New metrics related to memory usage;
+ \begin{itemize}
+  \item \emph{AllocOps} : Number of instruction about allocation of memory (malloc)
+  \item \emph{DeallocOps} : Number of instruction about Deallocation of memory (free)
+  \item \emph{DerefSet} : Number of times a pointer variable is dereferenced to read%expliquer
+  \item \emph{DerefUse} : Number of times a pointer variable is dereferenced to write
+  \item \emph{UniqueDerefSet} : Same as DerefSet but variable counted one time per file
+  \item \emph{UniqueDerefUse} : Same as DerefUse but variable counter one time per file
+ \end{itemize}
+\end{frame}
+% We introduce metrics related to memory usage because we noticed that lot of ARB are about memory leaks
+
+\section{Classifiers}
+\subsection{Classifiers}
 
 \end{document}
