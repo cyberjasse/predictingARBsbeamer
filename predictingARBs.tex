@@ -154,5 +154,44 @@
  \end{center}
 \end{frame}
 
+\begin{frame}
+ \frametitle{Results without new metrics}
+ \framesubtitle{MySQL}
+ \begin{center}
+ \begin{tabular}{lrrr}
+  \hspace{0.2cm} Classifier & PD & PF & Bal\\
+  \hline
+  NB & 49.14 & 10.46 & 63.02\\
+  NB + log &  \textbf{88.30} & \textbf{34.67} & \textbf{73.53}\\
+  BayesNet & 44.57 & 8.65 & 60.26\\
+  BayesNet + log & 44.50 & 8.65 & 60.21\\
+  DectTree & 11.21 & 2.64 & 37.17\\
+  DectTree + log & 11.28 & 2.65 & 37.22\\
+  Logistic & 22.93 & 4.46 & 45.40\\
+  Logistic + log & 25.07 & 5.13 & 46.88\\
+  \hline
+ \end{tabular}
+ \end{center}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Results without new metrics}
+ \framesubtitle{CARDAMOM}
+ \begin{center}
+ \begin{tabular}{lrrr}
+  \hspace{0.2cm} Classifier & PD & PF & Bal\\
+  \hline
+  NB & 0.00 & 7.18 & 29.08\\
+  NB + log &  \textbf{54.50} & \textbf{25.15} & \textbf{53.25}\\
+  BayesNet & 0.00 & 0.00 & 29.30\\
+  BayesNet + log & 0.00 & 0.00 & 29.30\\
+  DectTree & 0.00 & 0.00 & 29.30\\
+  DectTree + log & 0.00 & 0.00 & 29.30\\
+  Logistic & 0.00 & 1.21 & 29.30\\
+  Logistic + log & 0.00 & 0.65 & 29.30\\
+  \hline
+ \end{tabular}
+ \end{center}
+\end{frame}
 
 \end{document}
