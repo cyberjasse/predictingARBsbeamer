@@ -105,7 +105,7 @@
 % We introduce metrics related to memory usage because we noticed that lot of ARB are about memory leaks
 
 \section{Classifiers}
-\subsection{Classifiers}
+\subsection{Results without new metrics}
 \begin{frame}
  \frametitle{Tried classifiers} %TODO montrer la gueule que ça a
  \begin{itemize}
@@ -154,5 +154,43 @@
  \end{center}
 \end{frame}
 
+\subsection{Impact of attribute selection}
+% TODO expliquer ce qu'on calcule. le gain d'info là.
+\begin{frame}
+ \frametitle{Impact of attribute selection}
+ \framesubtitle{Linux}
+ \begin{center}
+  \includegraphics[width=\textwidth]{figures/attributesLinux.png}
+ \end{center}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Impact of attribute selection}
+ \framesubtitle{MySQL}
+ \begin{center}
+  \includegraphics[width=\textwidth]{figures/attributesMysql.png}
+ \end{center}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Impact of attribute selection}
+ \framesubtitle{CARDAMOM}
+ \begin{center}
+  \includegraphics[width=\textwidth]{figures/attributesCardamom.png}
+ \end{center}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Impact of attribute selection}
+ \begin{itemize}
+  \item Top metrics not the same
+  \item Need about 5 top metrics
+  \item With all metrics, nearly the same results than with 5
+ \end{itemize}
+ \vspace{0.5cm}
+ \begin{center}
+  $\Longrightarrow$ \alert{We keep the full set of metrics.}
+ \end{center}
+\end{frame}
 
 \end{document}
