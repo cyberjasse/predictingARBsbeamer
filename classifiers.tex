@@ -5,18 +5,18 @@
  \frametitle{Which metrics to use ?}
  Metrics correlated with bug density:
  \begin{itemize}
-  \item LOC : The number of lines of code
-  \item CC  : The McCabes's cyclomatic complexity
-  \item Halstead metrics
-  \item ...
+  \item Program size. 26 metrics including LOC
+  \item Cyclomatic complexity. 11 metrics
+  \item Halstead metrics. 9 metrics
  \end{itemize}
  \vspace{0.5cm}
  \small Halstead metrics: set of metrics based on the number of operands and number of operators. \normalsize
 \end{frame}
+% TODO liste complete en annexe
 
 \subsection{Results without new metrics}
 \begin{frame}
- \frametitle{Tried classifiers} %TODO montrer la gueule que ça a
+ \frametitle{Tried classifiers}
  \begin{itemize}
   \item Naive Bayes (NB)
   \item Bayesian networks (BayesNet)
@@ -24,6 +24,7 @@
   \item Logistic regression (Logistic)
  \end{itemize}
 \end{frame}
+%TODO montrer la gueule que ça a
 
 \begin{frame}
  \frametitle{Results without new metrics}
@@ -44,7 +45,7 @@
 %A classifier with a high PD can also have a high PF (imagine a classifier that always answer 'yes') So balance is a trade-off
 
 \begin{frame}
- \frametitle{Results without new metrics}
+ \frametitle{Results without new metrics}%TODO dire que en gras, c'est teste avec test alpha
  \framesubtitle{Linux}
  \begin{center}
  \begin{tabular}{lrrr}
@@ -64,12 +65,12 @@
 \end{frame}
 
 \begin{frame}
- \frametitle{Results without new metrics} %TODO change section: intro, metrics, choix classifier, attribute selection, avec new metrics, cross
+ \frametitle{Results without new metrics}
  \begin{center}
   $\Longrightarrow$ \alert{Select the Naive Bayes classifier with metrics at a logarithmic scale.}
  \end{center}
  \vspace{1cm}
- High probability of detection but high probability of false alarm.\\
+ High probability of detection but high probability of false alarm.\\%TODO high le bon mot ?
  Still useful for V\&V process:
  \begin{center}
   \alert{avoids to inspect the files classified as non-ARB !}

@@ -3,11 +3,14 @@
 \subsection{New metrics}
 \begin{frame}
  \frametitle{New metrics}%TODO un par slide avec exemples
+ \begin{center}
+  \alert{lot of ARB are about memory leaks.}
+ \end{center}
  New metrics related to memory usage, the \alert{ARMs}:
  \begin{itemize}
   \item \emph{AllocOps} : Number of instruction about allocation of memory (malloc)
   \item \emph{DeallocOps} : Number of instruction about Deallocation of memory (free)
-  \item \emph{DerefSet} : Number of times a pointer variable is dereferenced to read%expliquer
+  \item \emph{DerefSet} : Number of times a pointer variable is dereferenced to read%TODO expliquer
   \item \emph{DerefUse} : Number of times a pointer variable is dereferenced to write
   \item \emph{UniqueDerefSet} : Same as DerefSet but variable counted one time per file
   \item \emph{UniqueDerefUse} : Same as DerefUse but variable counter one time per file
@@ -30,6 +33,8 @@
   \hline
  \end{tabular}
  \end{center}
+ \vspace{0.5cm}
+ It decreases PF.
 \end{frame}
 
 \begin{frame}
@@ -46,6 +51,8 @@
   \hline
  \end{tabular}
  \end{center}
+ \vspace{0.5cm}
+ It decreases PF.
 \end{frame}
 
 \begin{frame}
@@ -62,6 +69,6 @@
   \hline
  \end{tabular}
  \end{center}
+ \vspace{0.5cm}
+ It decreases PF and increases PD. $\Longrightarrow$ \alert{We keep ARMs.}
 \end{frame}
-
-%TODO conclusion
