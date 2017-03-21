@@ -7,16 +7,45 @@
   \alert{lot of ARB are about memory leaks.}
  \end{center}
  New metrics related to memory usage, the \alert{ARMs}:
+ \vfill
  \begin{itemize}
-  \item \emph{AllocOps} : Number of instruction about allocation of memory (malloc)
-  \item \emph{DeallocOps} : Number of instruction about Deallocation of memory (free)
-  \item \emph{DerefSet} : Number of times a pointer variable is dereferenced to read%TODO expliquer
-  \item \emph{DerefUse} : Number of times a pointer variable is dereferenced to write
-  \item \emph{UniqueDerefSet} : Same as DerefSet but variable counted one time per file
-  \item \emph{UniqueDerefUse} : Same as DerefUse but variable counter one time per file
+  \item \emph{AllocOps} : Number of instruction about allocation of memory
+   \begin{center}
+    (malloc)
+   \end{center}
+  \item \emph{DeallocOps} : Number of instruction about Deallocation of memory
+   \begin{center}
+    (free)
+   \end{center}
  \end{itemize}
 \end{frame}
 % We introduce metrics related to memory usage because we noticed that lot of ARB are about memory leaks
+
+\begin{frame}[fragile]
+ \frametitle{New metrics}
+ \begin{itemize}
+  \item \emph{DerefUse} : Number of times a pointer variable is dereferenced to write
+   \begin{exampleblock}{Dereferencing a structure member}
+    \begin{verbatim}typedef struct X { int a; int b; } X;
+X x;
+X* p = &x;
+p->a = 3.14159;\end{verbatim}
+   \end{exampleblock}
+  \item \emph{DerefSet} : Number of times a pointer variable is dereferenced to read
+   \begin{exampleblock}{Dereferencing \texttt{p} and read}
+    \begin{verbatim}printf("%ld", p->a);\end{verbatim}
+   \end{exampleblock}
+ \end{itemize}
+\end{frame}
+
+\begin{frame}
+ \frametitle{New metrics}
+ \begin{itemize}
+  \item \emph{UniqueDerefSet} : Same as DerefSet but variable counted one time per file
+  \item \emph{UniqueDerefUse} : Same as DerefUse but variable counted one time per file
+ \end{itemize}
+ \vfill
+\end{frame}
 
 \subsection{Results}
 \begin{frame}
