@@ -5,15 +5,37 @@
  \frametitle{Which metrics to use ?}
  46 metrics correlated with bug density:
  \begin{itemize}
-  \item Program size. 26 metrics including LOC
+  \item Program size. 26 metrics\\
+  (lines of codes, comments, blank, semicolons, functions, preprocessor)
   \item Cyclomatic complexity. 11 metrics
   \item Halstead metrics. 9 metrics
  \end{itemize}
- \vspace{0.5cm}
- \small Halstead metrics: set of metrics based on the number of operands and number of operators. \normalsize
 \end{frame}
 % TODO liste complete en annexe
 % Program size: cout lines of code, blank lines, comments, functions, classes, semicolons.
+% Program size: count, average, ration, etc,
+
+\begin{frame}
+ \frametitle{Halstead metrics}
+ Halstead metrics: set of metrics based on the number of operands and number of operators.\\
+ Based on
+ \begin{center}
+  \begin{tabular}{ll}
+   $\eta_1$ & = The number of distinct operators\\
+   $\eta_2$ & = The number of distinct operands\\
+   $N_1$ & = The total number of operators\\
+   $N_2$ & = The total number of operands\\
+  \end{tabular}
+ \end{center}
+ \begin{exampleblock}{Some halstead metrics}
+  \begin{itemize}
+   \item Program vocabulary = $\eta = \eta_1 + \eta_2$
+   \item Program length = $N = N_1 + N_2$
+   \item Volume = $N \times \text{log}_2\eta$
+   \item Difficulty = $\frac{\eta_1}{2} \times \frac{N_2}{\eta_2}$
+  \end{itemize}
+ \end{exampleblock}
+\end{frame}
 
 \subsection{Results without new metrics}
 \begin{frame}
