@@ -1,5 +1,10 @@
 \section{cross classification}
 
+% Ok but it will not be not very usefull if we cannot use the classifier for something new line another project or a new component.
+% We start to check it for the cross-component classification.
+% For each component, we exclude it and use it as the test set.
+% We continue to have a high probability of detection with a not negligible probability of false alarm.
+% Exceted for Foundation in CARDAMOM. Its because there is only one ARB that is unfortunately not detected. There are a few ARB reported in CARDAMOM
 \subsection{cross-component}
 \begin{frame}
  \frametitle{Cross-component classification}
@@ -27,6 +32,10 @@
 \end{frame}
 %SCSI = Small Computer System Interface. Bus connecting the computer to peripherics or computers
 
+% And finally, the more interesting, the cross-project classification.
+% For each project, we use it as the training set and computes the statistics for the two others separately.
+% We keep a high probability of detection between Linux and MySQL but not for the CARDAMOM. Whether its the training set or not.
+% Its because the difference between it and the two other. The kind is not the same. CARDAMOM is in pure C++ while Linux is in C and MySQL a mix between C and C++.
 \subsection{cross-project}
 \begin{frame}
  \frametitle{Cross-project classification}

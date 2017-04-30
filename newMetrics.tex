@@ -1,5 +1,7 @@
 \section{New metrics}
 
+% Because we noticed that lot of ARB are about memory leaks, we introduce new metrics related to memory usage.
+%AllocOps is the count of memory allocation. DeallocOps, the count of deallocation.
 \subsection{New metrics}
 \begin{frame}
  \frametitle{New metrics}
@@ -19,8 +21,10 @@
    \end{center}
  \end{itemize}
 \end{frame}
-% We introduce metrics related to memory usage because we noticed that lot of ARB are about memory leaks
 
+%DerefUse, the number of time we dereference a pointer to write a value in its pointed variable.
+%DerefSet, the number of time we dereference a pointer to read the pointed value.
+%Its a bit confusing that Use means write and Set means read. Perhaps its a mistake in the paper but they really mentioned like this.
 \begin{frame}[fragile]
  \frametitle{New metrics}
  \begin{itemize}
@@ -38,6 +42,7 @@ p->a = 3.14159;\end{verbatim}
  \end{itemize}
 \end{frame}
 
+%Then we introduce the dereferencing metrics in the version where we count variable one time per file.
 \begin{frame}
  \frametitle{New metrics}
  \begin{itemize}
@@ -47,6 +52,7 @@ p->a = 3.14159;\end{verbatim}
  \vfill
 \end{frame}
 
+%For Linux, we can say that new metrics decreases the probability of false alarms, so it increases the balance.
 \subsection{Results}
 \begin{frame}
  \frametitle{Results with new metrics}
@@ -66,6 +72,7 @@ p->a = 3.14159;\end{verbatim}
  It decreases PF.
 \end{frame}
 
+%Idem for MySQL
 \begin{frame}
  \frametitle{Results with new metrics}
  \framesubtitle{MySQL}
@@ -84,6 +91,7 @@ p->a = 3.14159;\end{verbatim}
  It decreases PF.
 \end{frame}
 
+%And for CARDAMOM, it also increases the probability of detection. The new metrics are benefic
 \begin{frame}
  \frametitle{Results with new metrics}
  \framesubtitle{CARDAMOM}

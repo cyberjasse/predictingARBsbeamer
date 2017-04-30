@@ -18,6 +18,9 @@
 \section{Introduction}
 \subsection{Aging-related bugs}
 
+%Firstly, let's introduce the mandelbug. Its a set of bugs.
+%This is a bug that we cannot isolate between two println.
+%For example, it occurs some time after the fault activation or occurs with a sequence of operation or even external interactions.
 \begin{frame}
  \frametitle{Aging-Related Bugs}
  \framesubtitle{Mandelbug}
@@ -33,6 +36,8 @@
  \end{tabular}
 \end{frame}
 
+%Aging-related bugs are a subset of Mandelbug: We can see the effect only for software that runs a long time ago.
+%More and more error messages or the probability of a crash that increases with the running time.
 \begin{frame}
  \frametitle{Aging-Related Bugs}
  \framesubtitle{Aging-related mandelbug}
@@ -48,6 +53,10 @@
  \small Also called \emph{Aging-related bug} or \alert{ARB}.\normalsize
 \end{frame}
 
+%They can be caused by a memory allocation without deallocation, like a malloc() in C without a free(). And that's the case of most ARBs.
+%They can also be due to a numerical imprecision accruing over time.
+%Or an increasing queue, like in a router and then causes lags.
+%We also encouter one when executing unit test of pacman.
 \begin{frame}
  \frametitle{Aging-Related Bugs}
  \framesubtitle{Examples}
@@ -62,6 +71,10 @@
  \end{exampleblock}
 \end{frame}
 
+%Those horrible aging-related bugs... It would be great to detect where they are. Can we ?
+%The short answer is: select metrics then use a classifier !
+%Fortunately, you know what is a classifier. And so you know remaining questions:
+%Which attributes (metrics) to use? Perhaps creating news ? Which classifier? Is the generalisation good enough to use them for other projects ?
 \subsection{How to detect}
 \begin{frame}
  \frametitle{How can we detect them ?}
@@ -77,6 +90,8 @@
  \end{block}
 \end{frame}
 
+%In the study, we will do the experiment in 3 projects: Linux, MySQL and CARDAMOM.
+%The data base is fulled manually.
 \begin{frame}
  \frametitle{Project used as training set}
  3 complex projects will be used.\\
@@ -98,6 +113,9 @@
 
 \input{cross}
 
+% In conclusion, we can use the classifier for an inspection purpose.
+% We save time by avoiding inspecting files classified as non-ARB-prone.
+% But its usefull only if the classifier is trained with similar project. Similar in caracteristics and language.
 \section{Conclusion}
 \subsection{Conclusion}
 \begin{frame}

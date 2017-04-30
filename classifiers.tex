@@ -1,5 +1,6 @@
 \section{Classifiers}
 
+%Before any experiment, we select as attribute program size metrics, cyclomatic complexity and Halstead metrics.
 \subsection{Metrics to use}
 \begin{frame}
  \frametitle{Which metrics to use ?}
@@ -15,6 +16,8 @@
 % Program size: cout lines of code, blank lines, comments, functions, classes, semicolons.
 % Program size: count, average, ration, etc,
 
+%Haltead metrics are metric based on the number of operands and operators.
+%For example, the sum of operands and operators is the program length. If we sum only distincs, we get the program vocabulary.
 \begin{frame}
  \frametitle{Halstead metrics}
  Halstead metrics: set of metrics based on the number of operands and number of operators.\\
@@ -37,6 +40,7 @@
  \end{exampleblock}
 \end{frame}
 
+%The classifier we will test is the Naive Bayes, Bayesian network, Decision tree and Logistic regression.
 \subsection{Results without new metrics}
 \begin{frame}
  \frametitle{Tried classifiers}
@@ -49,6 +53,11 @@
 \end{frame}
 %TODO montrer la gueule que ça a
 
+%The statistics we will compute for experiments is:
+%the probability of detection, pourcentage of correctly classified ARB-prone instances,
+%the probability of false alarm, pourcentage of uncorrectly classified non-ARB-prone instances,
+%the balance, a compromise between them because a good probability detection doesn't mean a good classifier if it includes too much false alarms.
+%We will also do the experiment with attributes at a logarithmic scale.
 \begin{frame}
  \frametitle{Results without new metrics}
  \framesubtitle{Terminology}
@@ -68,6 +77,9 @@
 %Probability of false alamrs is the probability that a non-ARB-prone module is erroneously identified as ARB-prone
 %A classifier with a high PD can also have a high PF (imagine a classifier that always answer 'yes') So balance is a trade-off
 
+%Here for Linux, we can see that the Naive Bayes with metrics at a logarithmic scale give us
+%the best probability of detection, the highest probability of false alarm and the best balance
+%excepted that the balance difference between Naive Bayes with and without logarithmic scale is not statistically significant.
 \begin{frame}
  \frametitle{Results without new metrics}
  \framesubtitle{Linux}
@@ -88,6 +100,7 @@
  \end{center}
 \end{frame}
 
+%For MySQL, we can also say that Naive Bayes with logarithmic scale give us the highest probability of detection, false alarm ans balance.
 \begin{frame}
  \frametitle{Results without new metrics}
  \framesubtitle{MySQL}
@@ -108,6 +121,7 @@
  \end{center}
 \end{frame}
 
+%Idem for CARDAMOM
 \begin{frame}
  \frametitle{Results without new metrics}
  \framesubtitle{CARDAMOM}
@@ -128,6 +142,9 @@
  \end{center}
 \end{frame}
 
+%We can keep a classifier with a high probability of detection but it isn't a good ARB detector due to the not small hight probability of false alarm.
+%But we can use it as a inspection helper: with a high probability of detection, we can avoid inspecting files classified as non-ARB-prone.
+%We will use the Naive Bayes classifier and continue to use a logarithmic scale for metrics.
 \begin{frame}
  \frametitle{Results without new metrics}
  \begin{center}

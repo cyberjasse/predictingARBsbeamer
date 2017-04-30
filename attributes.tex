@@ -1,6 +1,9 @@
 \section{Attribute selection}
 \subsection{Impact}
 
+%Perhaps some metrics are useless. Moreover, discarding a attribute metric could improve performance.
+%A procedure to remove redundant attribute is to compute the info gain for each attributes
+%and then in a decreasing order of attributes rank, add the attribute in the set and report classifier results.
 \begin{frame}
  \frametitle{Attribute selection}
  \begin{center}
@@ -16,8 +19,8 @@
  \vspace{0.4cm}
  Then, in a decreasing order of $InfoGain(A_i)$, compute PD, PF and Bal with the NB+log classifier.
 \end{frame}
-%discarding a redundant metric could improve performance
 
+%For Linux, the maximum probability of detection is reached with the top 5 metrics and it stagnates from about the 25 first with approximatively the same probability of detection as top 5.
 \begin{frame}
  \frametitle{Impact of attribute selection}
  \framesubtitle{Linux}
@@ -25,7 +28,9 @@
   \includegraphics[width=\textwidth]{figures/attributesLinux.png}
  \end{center}
 \end{frame}
+%Alt = including inactive.
 
+%The highest probability of detection is reached on the top 35 and then it stagnate with a bit lower value.
 \begin{frame}
  \frametitle{Impact of attribute selection}
  \framesubtitle{MySQL}
@@ -34,6 +39,7 @@
  \end{center}
 \end{frame}
 
+%Here we need at least the top 5 metrics. It reaches the highest on top 37 and then seems to stagnate with the same value than on top 5.
 \begin{frame}
  \frametitle{Impact of attribute selection}
  \framesubtitle{CARDAMOM}
@@ -42,6 +48,9 @@
  \end{center}
 \end{frame}
 
+%We observe that the 10 top metrics are not the same for the three projects.
+%We need 5 metrics at least but with all metrics, we have nearly the same results.
+%To keep an attribute selection that keep good performance, we can keep all metrics we selected before.
 \begin{frame}
  \frametitle{Impact of attribute selection}
  \begin{itemize}
