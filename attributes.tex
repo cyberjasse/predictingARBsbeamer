@@ -1,9 +1,9 @@
 \section{Attribute selection}
 \subsection{Impact}
 
-%Perhaps some metrics are useless. Moreover, discarding a attribute metric could improve performance.
-%A procedure to remove redundant attribute is to compute the info gain for each attributes
-%and then in a decreasing order of attributes rank, add the attribute in the set and report classifier results.
+%Perhaps some metrics are useless. Moreover, discarding a redundant could improve performance.
+%A procedure to remove redundant attribute is to compute the info gain for each
+%and then in a decreasing order of attributes rank, add it in the set of attribute and note the classifier results.
 \begin{frame}
  \frametitle{Attribute selection}
  \begin{center}
@@ -20,7 +20,7 @@
  Then, in a decreasing order of $InfoGain(A_i)$, compute PD, PF and Bal with the NB+log classifier.
 \end{frame}
 
-%For Linux, the maximum probability of detection is reached with the top 5 metrics and it stagnates from about the 25 first with approximatively the same probability of detection as top 5.
+%For Linux, the maximum probability of detection is reached with the top 5 metrics and it stagnates from about the 25 first with approximatively the same value as top 5.
 \begin{frame}
  \frametitle{Impact of attribute selection}
  \framesubtitle{Linux}
@@ -30,7 +30,7 @@
 \end{frame}
 %Alt = including inactive.
 
-%The highest probability of detection is reached on the top 35 and then it stagnate with a bit lower value.
+%The highest probability of detection is reached on the top 35 and then it stagnates with a bit lower value.
 \begin{frame}
  \frametitle{Impact of attribute selection}
  \framesubtitle{MySQL}
@@ -50,7 +50,7 @@
 
 %We observe that the 10 top metrics are not the same for the three projects.
 %We need 5 metrics at least but with all metrics, we have nearly the same results.
-%To keep an attribute selection that keep good performance, we can keep all metrics we selected before.
+%To keep an attribute selection that keep good performance for all three projects, we can keep all metrics we selected before.
 \begin{frame}
  \frametitle{Impact of attribute selection}
  \begin{itemize}
